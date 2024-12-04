@@ -10,9 +10,12 @@ jobs:
       uses: docker/setup-buildx-action@v1
     - name: Install Docker Compose
       run: |
-        sudo apt-get update
-        sudo apt-get install -y docker-compose-plugin
-        docker-compose --version
+         curl -fsSL https://get.docker.com -o get-docker.sh
+         sudo sh get-docker.sh
+         sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -oP 'tag_name": "\K(.*)(?=")')/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+         sudo chmod +x /usr/local/bin/docker-compose
+         sudo systemctl start docker   # 启动 docker 服务
+         sudo docker --version         # 检查 docker 是否正常安装
     - name: Run Docker Compose
       run: |
         cd UOJ-System
