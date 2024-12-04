@@ -1,0 +1,22 @@
+name: Run Docker Compose
+ 
+on: [push]
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+ 
+    - name: Setup Docker
+      uses: docker/setup-action@v1
+ 
+    - name: Install Docker Compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker-compose
+    - name: Run Docker Compose
+      run: |
+        sudo docker-compose up -d
