@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # 或者使用适合你的项目的Node.js版本
+          node-version: '20'  # 或者使用适合你的项目的Node.js版本
 
       - name: Install Vercel CLI
         run: npm install -g vercel
