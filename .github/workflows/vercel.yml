@@ -3,7 +3,7 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - main  # 你可以根据需要更改为你项目的主分支名称
+      - master  # 你可以根据需要更改为你项目的主分支名称
 
 jobs:
   build-and-deploy:
