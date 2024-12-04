@@ -16,7 +16,7 @@ jobs:
         cmd: npm install -g vercel
  
     - name: Deploy to Vercel 🚀
-      uses: vercel/vercel-action@1.3.2
+      uses: amondnet/vercel-action@v25.2.0
       with:
         token: ${{ secrets.VERCEL_TOKEN }}
         args: '--prod'
