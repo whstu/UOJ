@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v2
  
     - name: Install Vercel CLI 🔧
-      uses: akhileshns/actions-npm@v1.1.0
+      uses: bevry-actions/npm@v1.1.7
       with:
         cmd: npm install -g vercel
  
