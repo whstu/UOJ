@@ -2,7 +2,7 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - main  # 更改为你的默认部署分支
+      - master  # 更改为你的默认部署分支
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
